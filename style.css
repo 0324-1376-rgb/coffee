@@ -1,0 +1,308 @@
+/* ===== Daybreak Coffee Corner — shared styles ===== */
+:root {
+  --espresso: #2a1d17;
+  --green: #2f5d50;
+  --green-dark: #20443a;
+  --butter: #e9c46a;
+  --milk: #faf8f5;
+  --stone: #e8e2d9;
+  --text: #2a1d17;
+  --muted: #6b5d54;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "DM Sans", "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: var(--milk);
+  line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+
+a:focus-visible {
+  outline: 3px solid var(--butter);
+  outline-offset: 3px;
+}
+
+/* ----- Navigation ----- */
+.site-header {
+  background: var(--espresso);
+  color: var(--milk);
+}
+
+.nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--butter);
+  color: var(--espresso);
+  display: grid;
+  place-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.nav ul { list-style: none; display: flex; gap: 8px; }
+
+.nav ul a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav ul a:hover { background: rgba(255, 255, 255, 0.12); }
+
+.nav ul a.active {
+  background: var(--butter);
+  color: var(--espresso);
+}
+
+/* ----- Layout helpers ----- */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 64px 0; }
+.section-title { font-size: 2rem; margin-bottom: 8px; }
+.section-sub { color: var(--muted); margin-bottom: 32px; max-width: 60ch; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--butter);
+  color: var(--espresso);
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn:hover { background: #f1d286; }
+
+/* ----- Home: hero ----- */
+.hero { background: var(--green); color: var(--milk); }
+
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); margin-bottom: 16px; }
+.hero p { font-size: 1.1rem; max-width: 46ch; margin-bottom: 28px; }
+
+.hero img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 200px 200px 16px 16px;
+  border: 6px solid var(--butter);
+  background: var(--stone);
+}
+
+/* ----- Featured / cards ----- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--stone);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: var(--stone);
+}
+
+.card-body { padding: 18px 20px 22px; }
+.card-body h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.card-body p { color: var(--muted); font-size: 0.95rem; }
+
+.tag {
+  display: inline-block;
+  background: var(--butter);
+  color: var(--espresso);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.band { background: var(--stone); }
+
+/* ----- Menu page ----- */
+.page-title {
+  background: var(--green);
+  color: var(--milk);
+  padding: 48px 0;
+}
+.page-title h1 { font-size: clamp(2rem, 4vw, 2.8rem); }
+.page-title p { margin-top: 8px; max-width: 56ch; }
+
+.menu-category { margin-bottom: 56px; }
+
+.menu-category > h2 {
+  font-size: 1.8rem;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+  border-bottom: 3px solid var(--butter);
+}
+
+.menu-item {
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--stone);
+}
+
+.menu-item img {
+  width: 150px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--stone);
+}
+
+.menu-item h3 { font-size: 1.2rem; }
+.menu-item p { color: var(--muted); font-size: 0.95rem; }
+
+.price {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green);
+}
+
+/* ----- About page ----- */
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-intro img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--stone);
+}
+
+.about-intro h2 { font-size: 2rem; margin-bottom: 12px; }
+.about-intro p + p { margin-top: 12px; }
+
+.values {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.values li {
+  background: #fff;
+  border-left: 5px solid var(--green);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+
+.values strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.1rem; }
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.info-box {
+  background: #fff;
+  border: 1px solid var(--stone);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.info-box h3 { margin-bottom: 12px; }
+
+.hours { width: 100%; border-collapse: collapse; }
+.hours td { padding: 6px 0; border-bottom: 1px solid var(--stone); }
+.hours td:last-child { text-align: right; }
+
+/* ----- Footer ----- */
+.site-footer {
+  background: var(--espresso);
+  color: var(--milk);
+  padding: 36px 0 28px;
+}
+
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-inner h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.footer-inner p { font-size: 0.95rem; opacity: 0.85; }
+
+.copyright {
+  max-width: 1080px;
+  margin: 24px auto 0;
+  padding: 16px 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 760px) {
+  .hero-inner,
+  .about-intro { grid-template-columns: 1fr; }
+  .hero img { height: 280px; }
+  .about-intro img { height: 260px; }
+
+  .menu-item { grid-template-columns: 110px 1fr; }
+  .menu-item img { width: 110px; height: 90px; }
+  .menu-item .price { grid-column: 2; }
+}
